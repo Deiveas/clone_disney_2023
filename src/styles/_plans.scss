@@ -1,0 +1,174 @@
+@use "variaveis";
+
+.plans {
+  padding: 10vw 5vw;
+
+  @media (max-width: 768px) {
+    margin: 0;
+    padding: 0;
+    p {
+      text-align: center;
+    }
+  }
+
+  h2 {
+    text-align: center;
+    margin: 0px 0px 20px;
+    @media (max-width: 768px) {
+      font-size: 24px;
+    }
+  }
+
+  h3 {
+    text-align: center;
+    font-weight: normal;
+    margin: 0px 0px 20px;
+  }
+
+
+
+  &__list {
+    display: flex;
+    justify-content: end;
+
+    .button {
+      margin-top: 24px;
+      
+    }
+
+    .plan-img {
+      width: 6.5%;
+      @media (max-width: 768px) {
+        width: 13%;
+      }
+    }
+
+    .plan-img2 {
+      width: 10%;
+    }
+    @media (max-width: 768px) {
+      .plan-img2 {
+        width: 20%;
+      }
+    }
+
+    p {
+      text-align: left;
+      margin: 0px 0px 20px;
+    }
+    
+    &__item2 {
+      text-align: center;
+      padding: 30px 8px 8px;
+      width: 100%;
+      border-top: 1px solid variaveis.$corBorderPlans;
+      padding-bottom: 60px;
+      @media (max-width: 768px) {
+        margin: 0;
+        padding: 20px 4px 4px;
+        padding-top: 0;
+        border-bottom: none;
+      }
+      .alin-preco {
+        padding-top: 35px;
+      }
+    }
+
+    &__item {
+      text-align: center;
+      padding: 30px 8px 8px;
+      width: 100%;
+      border-top: 1px solid variaveis.$corBorderPlans;
+
+      @media (max-width: 768px) {
+        padding: 20px 4px 4px;
+        margin: 0;
+        border-bottom: 1px solid variaveis.$corTextoSecundario;
+      }
+
+      .alin-img2 {
+        margin-top: 17px;
+      }
+      img {
+        height: 70px;
+        padding-bottom: 16px;
+
+        @media (max-width: 768px) {
+          height: 49px;
+          padding-bottom: 2;
+          }
+      }
+
+    }
+
+    &__border-head {
+        border-bottom: 1px solid variaveis.$corTextoSecundario;
+        padding-top: 95px;
+        position: sticky;
+        top: 0;
+        z-index: 1;
+        background-color: variaveis.$corDeFundo;
+
+        @media (max-width: 768px) {
+          padding: 0;
+          
+        }
+    }
+
+    &__back-plans {
+        background-color: variaveis.$corBackgroundPlans;
+    }
+  }
+  
+}
+@media (max-width: 768px) {
+  .plans__list {
+    display: flex;
+    flex-wrap: wrap;
+    border: none;
+  }
+
+  .elevate-above {
+    order: -1;
+    flex: 0 0 100%;
+  }
+
+  .plans__list__item {
+    flex: 0 0 50%;
+    .button--secondary--plans {
+      width: 100%;
+      margin: 30px 10px 20px 4px;
+    }
+  }
+  
+  .plans__list__back-plans2 {
+    background-color: variaveis.$corBackgroundPlans;
+  }
+  .plans__list__back-plans{
+    background-color: variaveis.$corDeFundo;
+  }
+
+  .plans__list__item2 {
+    
+    p {
+      text-align: center;
+      
+    }
+  }
+}
+
+
+@media (max-width: 768px) {
+  .plans {
+    .plans__list {
+      .plans__list__item:empty {
+        display: none;
+      }
+      
+    }
+    
+  }
+}
+
+
+

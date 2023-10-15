@@ -1,0 +1,90 @@
+@use 'variaveis';
+
+.faq {
+    padding: 52.8px 26.4px;
+
+    h2 {
+        text-align: center;
+        margin-bottom: 24px;
+    }
+
+    &__questions {
+        @media (max-width: 768px) {
+            span {
+                font-size: 15px; 
+             }
+          }
+
+        &__item {
+            background-color: variaveis.$corFundoFaq;
+            margin-bottom: 16px;
+
+            &__question {
+                color: variaveis.$corTextoFaq;
+                font-size: 20px;
+                padding: 24px;
+                display: block;
+                cursor: pointer;
+                position: relative;
+                @media (max-width: 768px) {
+                    font-size: 15px;
+                    padding-right: 26px;
+                  }
+                &::after {
+                    content: '+';
+                    position: absolute;
+                    top: 0;
+                    right: 26px;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    font-size: 40px;
+                    @media (max-width: 768px) {
+                        right: 1;
+                      }
+                }
+            }
+
+            &__answer {
+                height: 0;
+                overflow: hidden;
+                padding: 0 24px;
+                transition: height, .5s ease;
+
+                ul {
+                    padding-left: 40px;
+                }
+
+                li {
+                    position: relative;
+
+                }
+
+                li::before {
+                    content: "•";
+                    font-size: 24px;
+                    margin-right: 10px;
+                    position: absolute;
+                    left: -20px;
+                    top: 0;
+                }
+
+                a {
+                    color: variaveis.$corTextoFaq;
+                }
+            }
+
+            &--is-open {
+                .faq__questions__item__question::after {
+                    content: '-';
+                }
+
+                .faq__questions__item__answer {
+                    height: auto;
+                    padding-bottom: 24px;
+                    transition: height, .5s ease;
+                }
+            }
+        }
+    }
+}
